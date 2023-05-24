@@ -44,7 +44,7 @@ public class addCar extends AppCompatActivity {
                 int places = Integer.valueOf(placesCar.getText().toString());
 
 
-                ApiInterfaceCar apiInterface = createRequest.getRetrofitInstance().create(ApiInterfaceCar.class);
+                ApiInterface apiInterface = createRequest.getRetrofitInstance().create(ApiInterface.class);
                 car carRequest = new car(brand, modal, plaque, places);
 
                 Call<car> call = apiInterface.getCarInformation(carRequest);

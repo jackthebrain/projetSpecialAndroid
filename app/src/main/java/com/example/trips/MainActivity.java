@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 String destination = String.valueOf(arrivalEditText.getText());
                 String Condition = String.valueOf(conditionEditText.getText());
 
-            ApiInterfaceTrip apiInterface = createRequest.getRetrofitInstance().create(ApiInterfaceTrip.class);
+            ApiInterface apiInterface = createRequest.getRetrofitInstance().create(ApiInterface.class);
                 Trip tripRequest = new Trip(departure, destination, time, Condition);
 
                 Call<Trip> call = apiInterface.getTripInformation(tripRequest);
