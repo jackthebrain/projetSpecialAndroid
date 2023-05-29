@@ -16,7 +16,6 @@ public interface ApiInterface {
     Call<List<tripsResult>> getTrips();
     @GET("/GetCars")
     Call<List<carResult>> getCars();
-
     @POST("/getCarById")
     Call<car> getCarInformation(@Body CarIdRequest request);
 

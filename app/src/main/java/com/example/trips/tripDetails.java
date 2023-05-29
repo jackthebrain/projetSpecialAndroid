@@ -48,7 +48,6 @@ public class tripDetails extends AppCompatActivity {
 
     }
 
-
     private void initialiseDetails(){
         Bundle extras = getIntent().getExtras();
         String idCar = extras.getString("idCar");

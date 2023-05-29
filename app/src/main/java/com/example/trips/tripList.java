@@ -64,7 +64,6 @@ public class tripList extends AppCompatActivity implements recyclerListner {
             @Override
             public void onFailure(Call<List<tripsResult>> call, Throwable t) {
                 Toast.makeText(tripList.this, "error", Toast.LENGTH_SHORT).show();
-
             }
         });
     }
