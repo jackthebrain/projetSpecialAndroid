@@ -64,26 +64,24 @@ public class MainActivity extends AppCompatActivity {
         pushTripButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String departure = String.valueOf(departureEditText.getText());
                 String destination = String.valueOf(arrivalEditText.getText());
                 String Condition = String.valueOf(conditionEditText.getText());
 
             ApiInterface apiInterface = createRequest.getRetrofitInstance().create(ApiInterface.class);
                 Trip tripRequest = new Trip(departure, destination, time, Condition);
-
                 Call<Trip> call = apiInterface.getTripInformation(tripRequest);
             call.enqueue(new Callback<Trip>() {
                 @Override
                 public void onResponse(Call<Trip> call, Response<Trip> response) {
                     Toast.makeText(MainActivity.this, "suceed", Toast.LENGTH_SHORT).show();
                     finish();
+
                 }
 
                 @Override
                 public void onFailure(Call<Trip> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, "echec"+ t.getMessage()
-                            , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "echec"+ t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
             }

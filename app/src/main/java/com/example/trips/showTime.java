@@ -9,7 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class showTime extends AppCompatActivity {
-    Button addCar,addTrip,tripList;
+    Button addCar,addTrip,tripList,carlist;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class showTime extends AppCompatActivity {
         addCar = findViewById(R.id.addCar);
         addTrip = findViewById(R.id.addTrip);
         tripList = findViewById(R.id.tripList);
+        carlist = findViewById(R.id.carslist);
 
         addTrip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,11 +35,18 @@ public class showTime extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        carlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(showTime.this,carList.class);
+                startActivity(intent);
+            }
+        });
 
         addCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(showTime.this,tripList.class);
+                Intent intent = new Intent(showTime.this,addCar.class);
                 startActivity(intent);
             }
         });

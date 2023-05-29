@@ -13,43 +13,59 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapter.recyclerViewRetrofit> {
-    List<tripsResult> tripsresult ;
+    List<tripsResult> tripsresults ;
+    private final recyclerListner recyclerListner;
+
     Context mcontext;
-    public recyclerViewAdapter(Context context, List<tripsResult> tripsresult) {
+    public recyclerViewAdapter(Context context, List<tripsResult> tripsresult, com.example.trips.recyclerListner recyclerListner) {
         this.mcontext = context;
-        this.tripsresult = tripsresult;
+        this.tripsresults = tripsresult;
+        this.recyclerListner = recyclerListner;
     }
 
     @NonNull
     @Override
     public recyclerViewRetrofit onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mcontext).inflate(R.layout.trip,parent,false);
-        return new recyclerViewRetrofit(view);
+        return new recyclerViewRetrofit(view,recyclerListner);
     }
 
     @Override
     public void onBindViewHolder(@NonNull recyclerViewAdapter.recyclerViewRetrofit holder, int position) {
-        holder.departure.setText(tripsresult.get(position).getDeparture());
-        holder.destination.setText(tripsresult.get(position).getDestination());
-        holder.condition.setText(tripsresult.get(position).getCondition());
-        holder.time.setText(tripsresult.get(position).getTime());
+        holder.departure.setText(tripsresults.get(position).getDeparture());
+        holder.destination.setText(tripsresults.get(position).getDestination());
+        holder.condition.setText(tripsresults.get(position).getCondition());
+        holder.time.setText(tripsresults.get(position).getTime());
     }
 
     @Override
     public int getItemCount() {
-        return tripsresult.size();
+        return tripsresults.size();
     }
 
     public static class recyclerViewRetrofit extends RecyclerView.ViewHolder {
         TextView departure,destination,condition,time;
 
         @SuppressLint("CutPasteId")
-        public recyclerViewRetrofit(@NonNull View itemView) {
+        public recyclerViewRetrofit(@NonNull View itemView , recyclerListner recyclerListner) {
             super(itemView);
-            departure = itemView.findViewById(R.id.departure);
-            destination = itemView.findViewById(R.id.destination);
-            condition = itemView.findViewById(R.id.condition);
-            time = itemView.findViewById(R.id.time);
+            departure = itemView.findViewById(R.id.model);
+            destination = itemView.findViewById(R.id.brand);
+            condition = itemView.findViewById(R.id.places);
+            time = itemView.findViewById(R.id.plaque);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(recyclerListner != null){
+                        int pos = getAdapterPosition();
+
+                        if(pos != RecyclerView.NO_POSITION){
+                            recyclerListner.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }

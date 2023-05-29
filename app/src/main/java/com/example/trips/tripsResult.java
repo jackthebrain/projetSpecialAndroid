@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName;
 public class tripsResult {
     @SerializedName("id")
     String id;
+    @SerializedName("idCar")
+    String idCar;
     @SerializedName("departure")
     String departure;
     @SerializedName("destination")
@@ -16,6 +18,10 @@ public class tripsResult {
 
     public String getId() {
         return id;
+    }
+
+    public String getIdCar() {
+        return idCar;
     }
 
     public String getDeparture() {

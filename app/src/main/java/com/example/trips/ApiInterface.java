@@ -12,6 +12,12 @@ public interface ApiInterface {
      Call<Trip> getTripInformation(@Body Trip tripRequest);
     @POST("/createCar")
      Call<car> getCarInformation(@Body car CarRequest);
-    @GET("GetTrips")
+    @GET("/GetTrips")
     Call<List<tripsResult>> getTrips();
+    @GET("/GetCars")
+    Call<List<carResult>> getCars();
+
+    @POST("/getCarById")
+    Call<car> getCarInformation(@Body CarIdRequest request);
+
 }
