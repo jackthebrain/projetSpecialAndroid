@@ -64,19 +64,19 @@ public class tripDetails extends AppCompatActivity {
         ApiInterface apiInterface = createRequest.getRetrofitInstance().create(ApiInterface.class);
         CarIdRequest request = new CarIdRequest(idCar);
 
-        Call<car> call = apiInterface.getCarInformation(request);
+        Call<carResult> call = apiInterface.getCarInformation(request);
 
-        call.enqueue(new Callback<car>() {
+        call.enqueue(new Callback<carResult>() {
             @Override
-            public void onResponse(Call<car> call, Response<car> response) {
-                car result = response.body();
+            public void onResponse(Call<carResult> call, Response<carResult> response) {
+                carResult result = response.body();
                 Log.d(TAG, "Response body: " + new Gson().toJson(result));
                 carbrand.setText(String.valueOf(result.getBrand()));
                 places.setText(String.valueOf(result.getPlaces()));
             }
 
             @Override
-            public void onFailure(Call<car> call, Throwable t) {
+            public void onFailure(Call<carResult> call, Throwable t) {
 
             }
         });

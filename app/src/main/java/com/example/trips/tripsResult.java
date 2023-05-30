@@ -39,4 +39,11 @@ public class tripsResult {
     public String getCondition() {
         return condition;
     }
+
+    public tripsResult(String departure, String destination, String time, String condition) {
+        this.departure = departure;
+        this.destination = destination;
+        this.time = time;
+        this.condition = condition;
+    }
 }

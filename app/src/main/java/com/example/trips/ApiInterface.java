@@ -9,14 +9,17 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
     @POST("/createTrip")
-     Call<Trip> getTripInformation(@Body Trip tripRequest);
+     Call<tripsResult> getTripInformation(@Body tripsResult tripRequest);
     @POST("/createCar")
-     Call<car> getCarInformation(@Body car CarRequest);
+     Call<carResult> getCarInformation(@Body carResult CarRequest);
     @GET("/GetTrips")
     Call<List<tripsResult>> getTrips();
     @GET("/GetCars")
     Call<List<carResult>> getCars();
     @POST("/getCarById")
-    Call<car> getCarInformation(@Body CarIdRequest request);
+    Call<carResult> getCarInformation(@Body CarIdRequest request);
+    @POST("/deleteCar")
+    Call<carResult> DropCar(@Body CarIdRequest request);
+
 
 }

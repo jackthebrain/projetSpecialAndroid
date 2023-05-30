@@ -40,23 +40,23 @@ public class addCar extends AppCompatActivity {
             public void onClick(View view) {
                 String brand = String.valueOf(brandCar.getText());
                 String modal = String.valueOf(modalCar.getText());
-                String plaque = String.valueOf(plaqueCar.getText());
+                int plaque = Integer.valueOf(plaqueCar.getText().toString());
                 int places = Integer.valueOf(placesCar.getText().toString());
 
 
                 ApiInterface apiInterface = createRequest.getRetrofitInstance().create(ApiInterface.class);
-                car carRequest = new car(brand, modal, plaque, places);
+                carResult carRequest = new carResult(brand, modal, plaque, places);
 
-                Call<car> call = apiInterface.getCarInformation(carRequest);
-                call.enqueue(new Callback<car>() {
+                Call<carResult> call = apiInterface.getCarInformation(carRequest);
+                call.enqueue(new Callback<carResult>() {
                     @Override
-                    public void onResponse(Call<car> call, Response<car> response) {
+                    public void onResponse(Call<carResult> call, Response<carResult> response) {
                         Toast.makeText(addCar.this, "suceed", Toast.LENGTH_SHORT).show();
                         finish();
                     }
 
                     @Override
-                    public void onFailure(Call<car> call, Throwable t) {
+                    public void onFailure(Call<carResult> call, Throwable t) {
                         Toast.makeText(addCar.this, "echec! "+ t.getMessage()
                                 , Toast.LENGTH_SHORT).show();
                     }

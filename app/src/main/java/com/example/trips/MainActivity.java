@@ -69,18 +69,18 @@ public class MainActivity extends AppCompatActivity {
                 String Condition = String.valueOf(conditionEditText.getText());
 
             ApiInterface apiInterface = createRequest.getRetrofitInstance().create(ApiInterface.class);
-                Trip tripRequest = new Trip(departure, destination, time, Condition);
-                Call<Trip> call = apiInterface.getTripInformation(tripRequest);
-            call.enqueue(new Callback<Trip>() {
+                tripsResult tripRequest = new tripsResult(departure, destination, time, Condition);
+                Call<tripsResult> call = apiInterface.getTripInformation(tripRequest);
+            call.enqueue(new Callback<tripsResult>() {
                 @Override
-                public void onResponse(Call<Trip> call, Response<Trip> response) {
+                public void onResponse(Call<tripsResult> call, Response<tripsResult> response) {
                     Toast.makeText(MainActivity.this, "suceed", Toast.LENGTH_SHORT).show();
                     finish();
 
                 }
 
                 @Override
-                public void onFailure(Call<Trip> call, Throwable t) {
+                public void onFailure(Call<tripsResult> call, Throwable t) {
                     Toast.makeText(MainActivity.this, "echec"+ t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
