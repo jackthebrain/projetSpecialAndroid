@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linear1LoginScreen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        style="@style/groupStylewhite_A700">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="161dp"
+            android:layout_height="182dp"
+            android:layout_marginEnd="@dimen/_13pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_92pxv"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/img_nouveauprojet" />
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:id="@+id/linearColumn"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_82pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            style="@style/groupStylecornerRadius">
+
+            <LinearLayout
+                android:id="@+id/linearColumnemail"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                style="@style/groupStylewhite_A700cornerRadius">
+
+                <TextView
+                    android:ellipsize="end"
+                    android:id="@+id/txtEmail"
+                    android:layout_gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_8pxh"
+                    android:layout_marginTop="@dimen/_4pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="Email"
+                    style="@style/txtPoppinsmedium9"
+                    />
+                <EditText
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:id="@+id/email"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_20pxh"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    style="@style/txtPoppinsmedium14"
+                    android:text="hanisalaheddine.cherif@gmail.com"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:id="@+id/linearRowpassword"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_35pxv"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            style="@style/groupStylewhite_A700cornerRadius">
+            <LinearLayout
+                android:id="@+id/linearColumnpassword"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20pxv"
+                android:layout_marginStart="@dimen/_8pxh"
+                android:layout_marginTop="@dimen/_5pxv"
+                android:layout_weight="0.93"
+                android:layout_width="0dp"
+                android:orientation="vertical">
+
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtPassword"
+                    android:layout_gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_8pxh"
+                    android:layout_marginTop="@dimen/_4pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="Password"
+                    style="@style/txtPoppinsmedium9"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/password"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="@dimen/_15pxv"
+                    android:layout_marginStart="@dimen/_20pxh"/>
+
+            </LinearLayout>
+            <ImageView android:id="@+id/imageView_show_hide_pwd"
+                android:layout_height="@dimen/_19pxh"
+                android:layout_marginBottom="@dimen/_18pxv"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_37pxv"
+                android:layout_width="@dimen/_22pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_image5"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_image5"/>
+        </LinearLayout>
+
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtForgetpassword"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_13pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_25pxv"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="Forget password?"
+            style="@style/txtPoppinsregular12"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end"
+            android:gravity="center"
+            android:id="@+id/login"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12pxh"
+            android:layout_marginStart="@dimen/_13pxh"
+            android:layout_marginTop="@dimen/_33pxv"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_14pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_14pxv"
+            android:singleLine="true"
+            android:textAllCaps="true"
+            style="@style/btnSolidRounded"
+            android:text="login"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
